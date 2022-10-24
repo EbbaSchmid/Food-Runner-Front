@@ -14,3 +14,23 @@
 .inputContainer {
   margin-bottom: 1rem;
 }
+
+h1 {
+  color: #119DA4;
+  text-align: center;
+}
+
+p {
+  color: gray;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-success {
+  background-color: #119DA4 !important;
+}
+
+#main-body {
+  border: 10px solid blue;
+}
