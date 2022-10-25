@@ -11,6 +11,8 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Admin from './pages/Admin/Admin'
 import ThankYou from './pages/ThankYou/ThankYou'
+import * as reviewService from './services/reviewService'
+import ReviewList from './pages/ReviewList/ReviewList'
 
 
 // components
@@ -25,6 +27,7 @@ import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [reviews, setReviews] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -35,6 +38,12 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddReview = async newReviewData => {
+    const newReview = await reviewService.create(newReviewData)
+    setReviews([...reviews, newReview])
+    navigate('/')
   }
 
   return (
@@ -68,6 +77,10 @@ const App = () => {
         <Route
           path="/thankyou"
           element={<ThankYou />}
+        />
+        <Route
+          path="/reviewlist"
+          element={<ReviewList />}
         />
         <Route
           path="/change-password"

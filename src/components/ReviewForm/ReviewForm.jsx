@@ -8,13 +8,10 @@ const ReviewForm = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-     
     } catch (err) {
       props.updateMessage(err.message)
     }
   }
-
-
 
   return (
     <form
@@ -34,7 +31,7 @@ const ReviewForm = props => {
       </div>
     
       <div className={styles.inputContainer}>
-        <Link to='./'>
+        <Link to='/reviewList'>
         <button type="submit" className="reviewSubmitBtn" id={styles['sign-b']}>
           Submit Review
         </button>

@@ -21,31 +21,40 @@ const Inventory = props => {
     element.type === 'ingredient'
   )
 
-  console.log(crust)
-  console.log(beverages)
-  console.log(ingredients)
-  
+  const [selectedCrust, setCrustSelection] = useState({})
+
+  const handleClick = (id) => {
+    setCrustSelection(crust.find(element => element._id === id))
+  }
 
   return (
     <>
-    {console.log(props.inventory)}
-      
+    {console.log('selectedcrust', selectedCrust)}
     <div class={styles.parent}>
       <div class={styles.div1}>
         <h1>Pizza Pirates</h1>
         <h2>Build your Own Pizza</h2> 
       </div>
       <div class={styles.div2}>
-        <Crusts crusts={crust}/>
+        <div className={styles.containerFluid}>
+          {crust.map((element, idx) => 
+            <Crusts
+              id={element._id}
+              name={element.name}
+              handleClick={handleClick}
+              selected={element._id === selectedCrust._id ? true : false}
+            />  
+          )}
+        </div>
       </div>
       <div class={styles.div3}>
         <Items 
           beverages={beverages}
           ingredients={ingredients}
         />
+
       </div>
     </div>
-
     </>
   )
 }
