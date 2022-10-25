@@ -1,18 +1,25 @@
 import { useState, useRef, useEffect } from "react"
 import { useLocation, Link } from "react-router-dom"
+import * as inventoryService from '../../services/inventoryService'
 
 const PizzaBuilder = (props) => {
   
   const location = useLocation()
-  const [itemData, setItemData] = useState([])
+  const [inventory, setInventory] = useState([])
   
   const handleChange = evt => {
-    setItemData()
+    setInventory()
   }
   
   useEffect(() => {
+    const fetchAllInventory = async () => {
+      const inventoryData = await inventoryService.getAll()
+      setInventory(inventoryData)
+    }
+    fetchAllInventory()
+    console.log(inventory)
     
-  }, [])
+  }, [inventory])
 
   const handleSubmit = evt => {
     evt.preventDefault()
