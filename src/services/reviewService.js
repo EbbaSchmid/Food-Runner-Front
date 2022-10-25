@@ -19,5 +19,4 @@ async function getAll() {
 export {
   create,
   getAll,
-
 }
