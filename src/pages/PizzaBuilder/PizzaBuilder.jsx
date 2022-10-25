@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import { useLocation, Link } from "react-router-dom"
+import Inventory from "../../components/Inventory/Inventory"
 import * as inventoryService from '../../services/inventoryService'
 
 const PizzaBuilder = (props) => {
@@ -21,12 +22,11 @@ const PizzaBuilder = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleUpdatePuppy()
   }
   
   return (
     <>
-        <></>
+        <Inventory inventory={inventory} />
 		</>
   )
 }
