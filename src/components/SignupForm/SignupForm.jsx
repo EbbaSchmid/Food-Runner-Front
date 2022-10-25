@@ -108,7 +108,8 @@ const SignupForm = props => {
         />
       </div> */}
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} type="submit" className="btn btn-success mt-3" id={styles['sign-b']}>
+        <button type="submit" disabled={isFormInvalid()} className="btn btn-success mt-5" id={styles['sign-b']}>
+
           Sign-Up
         </button>
       </div>

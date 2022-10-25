@@ -13,9 +13,8 @@ const Landing = () => {
           </div> 
           <h1>Pizza Pirates</h1>
           <p class="mb-4">Fresh Mediterranean Pizza</p>
-          <h4><a href="#">See All Reviews</a></h4>
 
-            
+          <h4><a href="/">See All Reviews</a></h4>
 
           </header>
         </section>

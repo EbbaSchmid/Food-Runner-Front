@@ -72,8 +72,12 @@ const LoginForm = props => {
       </div>
       <p className="my-3">OR</p>
 
-      <div className="mt-2">
-        <p className="mb-3"><a href="#">Sign in</a> as Business Owner</p>
+      <div>
+        <button type="submit" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
+      </div>
+      <div className="mt-5">
+        <p className="mb-3"><a href="/">Sign in</a> as Business Owner</p>
+
         <p>Powered by Food Runner, Inc. ©</p>
       </div>
     </form>
