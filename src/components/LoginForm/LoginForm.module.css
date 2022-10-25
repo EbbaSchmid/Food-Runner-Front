@@ -27,10 +27,6 @@ p {
   margin-bottom: 20px;
 }
 
-.btn-success {
-  background-color: #119DA4 !important;
-}
-
 #main-body {
   border: 10px solid blue;
 }
@@ -40,4 +36,12 @@ img {
   height: 100px;
   opacity: .3;
 }
+
+#login-b {
+  background-color: #5139F2;
+ }
+
+ #sign-b {
+  background-color: #119DA4;
+ }
 
