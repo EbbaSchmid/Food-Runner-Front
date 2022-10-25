@@ -2,9 +2,16 @@ import styles from './Landing.module.css'
 
 const Landing = ({ user }) => {
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-    </main>
+    <>
+      <main className={styles.container}>
+        <section className={styles.about}>
+          <header>
+            <h1>Food Runner</h1>
+            <h3>Sign up or Log-in</h3>
+          </header>
+        </section>
+      </main>
+    </> 
   )
 }
 
