@@ -27,14 +27,20 @@ const LoginForm = props => {
   }
 
   return (
+    
+    <>
+    <div class="main-body">
+    <h1>Pizza Pirates</h1>
+    <p class="mb-4">Sign-up or Log-in</p>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
         <input
+          className="form-control"
+          placeholder="Email"
           type="text"
           autoComplete="off"
           id="email"
@@ -42,10 +48,11 @@ const LoginForm = props => {
           name="email"
           onChange={handleChange}
         />
-      </div>
+      </div><br /><br />
       <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
         <input
+          className="form-control"
+          placeholder="Password"
           type="password"
           autoComplete="off"
           id="password"
@@ -54,13 +61,20 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
+      <div class="mt-3">
+        <button type="button" className="btn btn-success" >Log-In</button>
+      </div>
+      <p class="my-3">OR</p>
       <div>
-        <button className={styles.button}>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+        <button type="button" className="btn btn-success" >Sign-Up</button>
+      </div>
+      <div class="mt-5">
+        <p class="mb-3"><a href="#">Sign in</a> as Business Owner</p>
+        <p>Powered by Food Runner, Inc. ©</p>
       </div>
     </form>
+    </div>  
+    </>
   )
 }
 

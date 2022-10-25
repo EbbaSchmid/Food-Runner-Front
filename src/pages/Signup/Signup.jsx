@@ -11,9 +11,11 @@ const Signup = props => {
 
   return (
     <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
+      <h1 class="mt-5">Pizza Pirates</h1>
+      <h3>Sign-up</h3>
+      <p>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
       <SignupForm {...props} updateMessage={updateMessage} />
+      <p>Powered by Food Runner, Inc. ©</p>
     </main>
   )
 }
