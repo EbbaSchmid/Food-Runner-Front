@@ -9,6 +9,8 @@ import Landing from './pages/Landing/Landing'
 import PizzaBuilder from './pages/PizzaBuilder/PizzaBuilder'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Admin from './pages/Admin/Admin'
+import ThankYou from './pages/ThankYou/ThankYou'
 
 
 // components
@@ -58,6 +60,14 @@ const App = () => {
               <PizzaBuilder />
             </ProtectedRoute>
           }
+        />
+        <Route
+          path="/admin"
+          element={<Admin />}
+        />
+        <Route
+          path="/thankyou"
+          element={<ThankYou />}
         />
         <Route
           path="/change-password"

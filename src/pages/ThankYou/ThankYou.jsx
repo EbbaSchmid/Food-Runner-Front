@@ -24,10 +24,7 @@ const ThankYou = (props) => {
           <h4 id="submitMessage">Your order has been submitted and will be ready in 30 minutes. Thank you for ordering with Pizza Pirates.</h4>
 
           <p>{message}</p>
-      <ReviewForm
-        handleSignupOrLogin={props.handleSignupOrLogin}
-        updateMessage={updateMessage}
-      />
+      
 
 
         </section>
