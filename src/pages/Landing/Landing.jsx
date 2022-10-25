@@ -7,12 +7,16 @@ const Landing = () => {
       <main className={styles.container}>
         <section className={styles.about}>
           <header>
-            <div className="text-center mt-5">
-              <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
-          </div>
-            <h1 className='mt-1'>Pizza Pirates</h1>
-            <h6>Fresh Mediterranean Pizza</h6>
-            <p><a href="#">See All Reviews -></a></p>
+ 
+          <div class="text-center mt-5">
+            <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
+          </div> 
+          <h1>Pizza Pirates</h1>
+          <p class="mb-4">Fresh Mediterranean Pizza</p>
+          <h4><a href="#">See All Reviews</a></h4>
+
+            
+
           </header>
         </section>
         <p className="mt-1">Log-in or Sign-up below to order!</p>
