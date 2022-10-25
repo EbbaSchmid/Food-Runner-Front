@@ -108,9 +108,11 @@ const SignupForm = props => {
         />
       </div> */}
       <div className={styles.inputContainer}>
+        <Link to="/pizza-builder">
         <button disabled={isFormInvalid()} type="button" className="btn btn-success mt-5" id={styles['sign-b']}>
           Sign-Up
         </button>
+        </Link>
       </div>
     </form>
   )
