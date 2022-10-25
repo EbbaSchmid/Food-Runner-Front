@@ -10,11 +10,10 @@ const Inventory = props => {
   const navigate = useNavigate()
 
 
-
   return (
     
     <>
-    
+
     </>
   )
 }
