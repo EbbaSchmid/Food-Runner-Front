@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './Inventory.module.css'
 import Crusts from '../Crusts/Crusts'
+import Items from '../Items/Items'
 import * as authService from '../../services/authService'
 
 const Inventory = props => {
@@ -38,7 +39,10 @@ const Inventory = props => {
         <Crusts crusts={crust}/>
       </div>
       <div class={styles.div3}>
-
+        <Items 
+          beverages={beverages}
+          ingredients={ingredients}
+        />
       </div>
     </div>
 
