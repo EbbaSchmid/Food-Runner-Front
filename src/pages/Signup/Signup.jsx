@@ -11,7 +11,10 @@ const Signup = props => {
 
   return (
     <main className={styles.container}>
-      <h1 class="mt-5">Pizza Pirates</h1>
+      <div class="text-center mt-3">
+      <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
+    </div>
+      <h1>Pizza Pirates</h1>
       <h3>Sign-up</h3>
       <p>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
       <SignupForm {...props} updateMessage={updateMessage} />

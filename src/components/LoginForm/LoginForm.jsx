@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
 
+
+
 const LoginForm = props => {
   const [formData, setFormData] = useState({
     email: '',
@@ -30,6 +32,9 @@ const LoginForm = props => {
     
     <>
     <div class="main-body">
+    <div class="text-center">
+      <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
+    </div>
     <h1>Pizza Pirates</h1>
     <p class="mb-4">Sign-up or Log-in</p>
     <form

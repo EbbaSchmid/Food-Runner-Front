@@ -8,11 +8,13 @@
   justify-content: center;
 }
 
-.container img {
+/* .container img {
   width: 100%;
-  border-radius: 50%;
-  margin-bottom: 60px;
-}
+  border-radius: 0%;
+  width: 155px;
+  height:155px;
+  margin: 0px auto;
+} */
 
 @media only screen and (max-height: 600px) {
   .container img {
