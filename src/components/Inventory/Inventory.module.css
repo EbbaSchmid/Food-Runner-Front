@@ -4,7 +4,10 @@
   align-items: center; 
 }
 
-.container-fluid {
+.containerFluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border:none;
   margin: 20px 0;
   border:none;
@@ -14,7 +17,7 @@
 .parent {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 0.2fr repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
