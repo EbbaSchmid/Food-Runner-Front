@@ -67,12 +67,12 @@ const LoginForm = props => {
         />
       </div>
       <div class="mt-3">
-        <button type="button" className="btn btn-success" >Log-In</button>
+        <button type="button" className="btn btn-success" id={styles['login-b']}>Log-In</button>
       </div>
       <p class="my-3">OR</p>
       <div>
         <Link to="/signup">
-        <button type="button" className="btn btn-success" >Sign-Up</button>
+        <button type="button" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
         </Link>
       </div>
       <div class="mt-5">
