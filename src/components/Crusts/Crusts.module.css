@@ -1,0 +1,9 @@
+.containerFluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  margin: 20px 0;
+  border:none;
+  padding: 0;
+}
