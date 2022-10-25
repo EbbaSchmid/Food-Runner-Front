@@ -1,15 +1,26 @@
 import styles from './Crusts.module.css'
+import { useState } from 'react'
+
 const Crusts = props => {
 
   return(
-    <div className={styles.containerFluid}>
-      <input type="radio" class="btn-check" name="options" id="6Inch" value="6" autocomplete="off" checked/>
-      <label class="btn btn-outline-primary" for="option1">6</label>
-      <input type="radio" class="btn-check" name="options" id="12Inch" value="12" autocomplete="off"/>
-      <label class="btn btn-outline-primary" for="option2">9</label>
-      <input type="radio" class="btn-check" name="options" id="16Inch" value="16" autocomplete="off"/>
-      <label class="btn btn-outline-primary" for="option3">12</label>
+    props.selected ?
+    <div 
+      className={styles.crustDiv} 
+      style={{borderColor: '#119DA4', backgroundColor:'#c8ece8'}} 
+      onClick={() => props.handleClick(props.id)}
+      >
+        <h5 style={{ color: '#119DA4', margin: 0}}>{props.name}</h5>
+    </div> 
+    :
+    <div 
+      className={styles.crustDiv}
+      style={{borderColor: 'gray'}} 
+      onClick={() => props.handleClick(props.id)}
+      >
+        <h5 style={{ color: 'gray', margin: 0}}>{props.name}</h5>
     </div>
+
   )
 }
 
