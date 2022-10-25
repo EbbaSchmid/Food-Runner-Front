@@ -49,8 +49,9 @@ const SignupForm = props => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
         <input
+          className="form-control"
+          placeholder="Name"
           type="text"
           autoComplete="off"
           id="name"
@@ -60,8 +61,9 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
         <input
+          className="form-control"
+          placeholder="Email"
           type="text"
           autoComplete="off"
           id="email"
@@ -71,8 +73,9 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
         <input
+          className="form-control"
+          placeholder="Password"
           type="password"
           autoComplete="off"
           id="password"
@@ -82,10 +85,9 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
-        </label>
         <input
+          className="form-control"
+          placeholder="Confirm Password"
           type="password"
           autoComplete="off"
           id="confirm"
@@ -94,7 +96,7 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
+      {/* <div className={styles.inputContainer}>
         <label htmlFor="photo-upload" className={styles.label}>
           Upload Photo
         </label>
@@ -104,14 +106,11 @@ const SignupForm = props => {
           name="photo"
           onChange={handleChangePhoto}
         />
-      </div>
+      </div> */}
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
+        <button disabled={isFormInvalid()} type="button" className="btn btn-success mt-5">
+          Sign-Up
         </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
       </div>
     </form>
   )
