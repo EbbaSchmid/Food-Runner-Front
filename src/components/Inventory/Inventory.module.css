@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.label,
+.button {
+  margin-right: 0.5rem;
+}
+
+.inputContainer {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: #119DA4;
+  text-align: center;
+}
+
+p {
+  color: gray;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#main-body {
+  border: 10px solid blue;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  opacity: .3;
+}
+
+#login-b {
+  background-color: #5139F2;
+ }
+
+ #sign-b {
+  background-color: #119DA4;
+ }
+
+
+
