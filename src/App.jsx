@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
+import PizzaBuilder from './pages/PizzaBuilder/PizzaBuilder'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
@@ -39,6 +40,10 @@ const App = () => {
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route
+          path="/"
+          element={<Landing />}
+        />
+        <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
@@ -47,10 +52,10 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path="/pizza-builder"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <PizzaBuilder />
             </ProtectedRoute>
           }
         />

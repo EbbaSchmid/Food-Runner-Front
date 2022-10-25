@@ -1,6 +1,6 @@
 import styles from './Landing.module.css'
 
-const Landing = ({ user }) => {
+const Landing = () => {
   return (
     <>
       <main className={styles.container}>
