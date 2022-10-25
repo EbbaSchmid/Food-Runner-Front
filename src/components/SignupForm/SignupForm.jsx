@@ -30,7 +30,7 @@ const SignupForm = props => {
     try {
       await authService.signup(formData, photoData.photo)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/pizza-builder')
     } catch (err) {
       props.updateMessage(err.message)
     }
@@ -108,11 +108,9 @@ const SignupForm = props => {
         />
       </div> */}
       <div className={styles.inputContainer}>
-        <Link to="/pizza-builder">
-        <button disabled={isFormInvalid()} type="button" className="btn btn-success mt-5" id={styles['sign-b']}>
+        <button disabled={isFormInvalid()} type="submit" className="btn btn-success mt-5" id={styles['sign-b']}>
           Sign-Up
         </button>
-        </Link>
       </div>
     </form>
   )
