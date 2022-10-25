@@ -22,7 +22,7 @@ const LoginForm = props => {
     try {
       await authService.login(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/pizza-builder')
     } catch (err) {
       props.updateMessage(err.message)
     }
@@ -66,17 +66,15 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div class="mt-3">
-        <button type="button" className="btn btn-success" id={styles['login-b']}>Log-In</button>
+      <div className="mt-3">
+        <button type="submit" className="btn btn-success" id={styles['login-b']}>Log-In</button>
       </div>
-      <p class="my-3">OR</p>
+      <p className="my-3">OR</p>
       <div>
-        <Link to="/signup">
-        <button type="button" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
-        </Link>
+        <button type="submit" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
       </div>
-      <div class="mt-5">
-        <p class="mb-3"><a href="#">Sign in</a> as Business Owner</p>
+      <div className="mt-5">
+        <p className="mb-3"><a href="#">Sign in</a> as Business Owner</p>
         <p>Powered by Food Runner, Inc. ©</p>
       </div>
     </form>
