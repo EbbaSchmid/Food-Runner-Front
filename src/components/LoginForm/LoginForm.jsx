@@ -71,7 +71,9 @@ const LoginForm = props => {
       </div>
       <p class="my-3">OR</p>
       <div>
+        <Link to="/signup">
         <button type="button" className="btn btn-success" >Sign-Up</button>
+        </Link>
       </div>
       <div class="mt-5">
         <p class="mb-3"><a href="#">Sign in</a> as Business Owner</p>
