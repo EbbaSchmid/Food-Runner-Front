@@ -1,6 +1,6 @@
 // npm modules
-import { useState } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Routes, Route, useNavigate, Link } from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -10,9 +10,12 @@ import PizzaBuilder from './pages/PizzaBuilder/PizzaBuilder'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Admin from './pages/Admin/Admin'
-import ThankYou from './pages/ThankYou/ThankYou'
 import * as reviewService from './services/reviewService'
+import AddReview from './pages/AddReview/AddReview'
+import EditReview from './pages/EditReview/EditReview'
 import ReviewList from './pages/ReviewList/ReviewList'
+import ReviewDetails from './pages/ReviewDetails/ReviewDetails'
+import NewReview from './pages/NewReview/NewReview'
 
 
 // components
@@ -40,11 +43,19 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleAddReview = async newReviewData => {
-    const newReview = await reviewService.create(newReviewData)
-    setReviews([...reviews, newReview])
-    navigate('/')
+  const handleAddReview = async (reviewData) => {
+    const newReview = await reviewService.create(reviewData)
+    setReviews([newReview, ...reviews])
+    navigate('/reviewList')
   }
+
+  useEffect(() => {
+    const fetchAllReviews = async () => {
+      const data = await reviewService.index()
+      setReviews(data)
+    }
+    fetchAllReviews()
+  }, [user])
 
   return (
     <>
@@ -75,13 +86,26 @@ const App = () => {
           element={<Admin />}
         />
         <Route
-          path="/thankyou"
-          element={<ThankYou />}
+          path="/reviewList"
+          element={
+          <ProtectedRoute user={user}>
+            <ReviewList reviews={reviews} />
+          </ProtectedRoute>
+          }  
         />
-        <Route
-          path="/reviewlist"
-          element={<ReviewList />}
+                <Route
+          path="/reviews/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <ReviewDetails user={user} />
+            </ProtectedRoute>
+          }
         />
+        <Route path="/reviews/new" element={
+          <ProtectedRoute user={user}>
+            <NewReview handleAddReview={handleAddReview} />
+          </ProtectedRoute>
+        } />
         <Route
           path="/change-password"
           element={

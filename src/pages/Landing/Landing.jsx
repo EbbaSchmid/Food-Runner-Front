@@ -8,11 +8,11 @@ const Landing = () => {
         <section className={styles.about}>
           <header>
  
-          <div class="text-center mt-5">
+          <div className="text-center mt-5">
             <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div> 
           <h1>Pizza Pirates</h1>
-          <p class="mb-4">Fresh Mediterranean Pizza</p>
+          <p className="mb-4">Fresh Mediterranean Pizza</p>
 
           <h4><a href="/">See All Reviews</a></h4>
 
