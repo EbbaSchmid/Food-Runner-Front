@@ -24,11 +24,27 @@ const Inventory = props => {
 
   const [selectedCrust, setCrustSelection] = useState({})
   const [selectedIngredients, setIngredients] = useState([])
-  const [selectedBeverages, setBeverages] = useState({})
-
+  const [selectedBeverages, setBeverages] = useState([])
+  const [cart, setCart] = useState({})
 
   const handleClick = (id) => {
     setCrustSelection(crust.find(element => element._id === id))
+  }
+
+  const handleAddToCart = (event) => {
+    event.preventDefault()
+
+    const items = {
+      pizza: [selectedCrust, ...selectedIngredients], 
+      beverages: selectedBeverages
+    }
+
+    setCart(items)
+    console.log('items', items)
+  }
+
+  const handleCheckout = (event) => {
+    event.preventDefault()
   }
 
   const handleBeverage = (id, event) => {
@@ -49,7 +65,6 @@ const Inventory = props => {
 
   return (
     <>
-    {console.log('selectedcrust', selectedCrust)}
     <div className={styles.parent}>
       <div className={styles.div1}>
         <h1>Pizza Pirates</h1>
@@ -90,7 +105,10 @@ const Inventory = props => {
           />
           )}
 
-          <CartBuilder />
+          <CartBuilder 
+            handleAddToCart={handleAddToCart}
+            handleCheckout={handleCheckout}
+          />
 
         </div>
       </div>
