@@ -15,7 +15,16 @@ const CartBuilder = (props) => {
         </form>
       </div>
       <div className={styles.div2}>
-      $400
+        <table>
+          <tr>
+            <td>Pizzas in Cart:</td>
+            <td>{props.pizzas}</td>
+          </tr>
+          <tr>
+            <td>Bev. in Cart:</td>
+            <td>{props.beverages}</td>
+          </tr>
+        </table>
 
       </div>
       <div className={styles.div3}>
