@@ -26,9 +26,11 @@ const Inventory = props => {
   const [selectedCrust, setCrustSelection] = useState('')
   const [selectedIngredients, setIngredients] = useState([])
   const [selectedBeverages, setBeverages] = useState([])
+  const [addedPizzas, setAddedPizzas] = useState([{}])
+  const [addedBeverages, setAddedBeverages] = useState([])
   
   const [order, setOrder] = useState({
-    pizza: [], 
+    pizzas: [], 
     beverages: []
   })
 
@@ -44,19 +46,22 @@ const Inventory = props => {
 
   const handleAddToCart = (event) => {
     event.preventDefault()
-  
+
     const newPizza = [
       ...selectedIngredients,
       selectedCrust._id
     ].filter(ing => ing !== undefined)
-    
+
     setOrder({
-      pizza: newPizza.length
-      ? [...order.pizza, newPizza]
-      : [...order.pizza],
+      pizzas: newPizza.length > 0 ? 
+      [...order.pizzas, {
+        ingredients: [...newPizza]
+      }]
+      :
+      [...order.pizzas]
+      , 
       beverages: [...order.beverages, ...selectedBeverages]
     })
-
     resetOptions()
   }
 
@@ -129,7 +134,7 @@ const Inventory = props => {
           <CartBuilder 
             handleAddToCart={handleAddToCart}
             handleCheckout={handleCheckout}
-            pizzas={order.pizza.length}
+            pizzas={order.pizzas.length}
             beverages={order.beverages.length}
           />
           
