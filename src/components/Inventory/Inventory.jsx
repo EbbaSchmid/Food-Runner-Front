@@ -33,6 +33,8 @@ const Inventory = props => {
 
   const resetOptions = () => {
     setCrustSelection('')
+    setIngredients([])
+    setBeverages([])
     document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false )
   }
   const handleClick = (id) => {
@@ -59,6 +61,7 @@ const Inventory = props => {
 
   const handleCheckout = (event) => {
     event.preventDefault()
+    console.log(order)
   }
 
   const handleBeverage = (id, event) => {
@@ -120,6 +123,8 @@ const Inventory = props => {
           <CartBuilder 
             handleAddToCart={handleAddToCart}
             handleCheckout={handleCheckout}
+            pizzas={order.pizza.length}
+            beverages={order.beverages.length}
           />
           
         </div>
