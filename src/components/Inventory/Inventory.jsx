@@ -5,6 +5,7 @@ import Crusts from '../Crusts/Crusts'
 import Items from '../Items/Items'
 import CartBuilder from '../CartBuilder/CartBuilder'
 import * as authService from '../../services/authService'
+import * as orderService from '../../services/orderService'
 
 const Inventory = props => {
   const [inventory, setInventory] = useState()
@@ -61,7 +62,12 @@ const Inventory = props => {
 
   const handleCheckout = (event) => {
     event.preventDefault()
-    console.log(order)
+    handleSubmitDatabase()
+  }
+
+  const handleSubmitDatabase = async () => {
+    const newOrder = await orderService.create(order)
+    //navigate('/')
   }
 
   const handleBeverage = (id, event) => {

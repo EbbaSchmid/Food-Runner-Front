@@ -9,6 +9,7 @@ async function create(order) {
     },
     body: JSON.stringify(order)
   })
+  console.log(order)
   return res.json()
 }
 
