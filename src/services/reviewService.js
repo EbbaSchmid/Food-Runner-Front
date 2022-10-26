@@ -1,22 +1,47 @@
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/reviewlist`
+import * as tokenService from './tokenService'
 
-async function create(review) {
-  const res = await fetch(BASE_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(review)
-  })
-  return res.json()
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/reviews`
+
+const index = async () => {
+  try {
+    const res = await fetch(BASE_URL, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-async function getAll() {
-  const res = await fetch(BASE_URL)
-  return res.json()
+const show = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-export {
-  create,
-  getAll,
+const create = async (reviewData) => {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { 
+  index, 
+  show,
+  create, 
 }

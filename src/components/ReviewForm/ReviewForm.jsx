@@ -25,8 +25,8 @@ const ReviewForm = props => {
           placeholder="Write a Review"
           type="text"
           autoComplete="off"
-          id="name"
-          name="name"
+          id="reviewInput"
+          name="review"
         />
       </div>
     

@@ -8,9 +8,11 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm'
 
 const ThankYou = (props) => {
   const [message, setMessage] = useState([''])
+  
   const updateMessage = msg => {
     setMessage(msg)
   }
+
   return (
     <>
       <main className={styles.container}>
@@ -47,8 +49,7 @@ const ThankYou = (props) => {
         </div>
             <ReviewForm
               handleReview={props.handleReview}
-              updateMessage={updateMessage}>
-            </ReviewForm>
+              updateMessage={updateMessage}></ReviewForm>
 
         </section>
       </main>

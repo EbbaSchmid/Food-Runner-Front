@@ -1,20 +1,14 @@
 import styles from './ReviewList.module.css'
-// import ReviewForm from '../../components/ReviewForm/ReviewForm'
+import ReviewCard from '../../components/ReviewCard/ReviewCard'
 
 const ReviewList = (props) => {
   return (
-    <>
-      <h1>Reviews</h1>
-      {/* <div className={styles.container}>
-        {props.reviews.map(review =>
-          <ReviewForm 
-            review={review} 
-            key={review._id} 
-          />
-        )}
-      </div> */}
-    </>
-  );
+    <main className={styles.container}>
+      {props.reviews.map((review) => (
+        <ReviewCard key={review._id} review={review} />
+      ))}
+    </main>
+  )
 }
 
-export default ReviewList;
+export default ReviewList
