@@ -17,9 +17,15 @@
 .parent {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr repeat(2, 1fr);
+  grid-template-rows: 0.2fr repeat(2, 0.5fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+
+.ingredientDiv{
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
   
 .div1 { grid-area: 1 / 1 / 2 / 2; }

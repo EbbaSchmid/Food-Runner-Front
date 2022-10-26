@@ -1,30 +1,20 @@
 const Items = (props) => {
-  const showIngredients = props.ingredients.map( product => {
-    return product.name
-  })
 
-  const showBeverages = props.beverages.map( product => {
-    return product.name
-  })
 
   return (
     <>
-      <form action="">
-        <div>
-          <h6>Ingredients ($0.99 each)</h6>
-          <label>
-            {showIngredients}
-            <input type="checkbox" name="name"/>
-          </label>
-        </div>
-        <div>
-          <h6>Choose a beverage bleow ($2.99 each)</h6>
-          <label>
-            {showBeverages}
-            <input type="checkbox" name="name" />
-          </label>
-        </div>
-      </form>
+    <div style={{margin: '5px 0'}} >
+      <input 
+        type="checkbox" 
+        id={props.id} 
+        name={props.name} 
+        value={props.name} 
+        onChange={e => props.handleFunction(props.id, e)}
+      />
+      <label 
+        style={{paddingLeft: '3px'}}>{props.name}
+      </label> 
+    </div>
     </>
   )
 }
