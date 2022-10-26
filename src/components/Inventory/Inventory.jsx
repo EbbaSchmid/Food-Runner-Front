@@ -22,25 +22,39 @@ const Inventory = props => {
     element.type === 'ingredient'
   )
 
-  const [selectedCrust, setCrustSelection] = useState({})
+  const [selectedCrust, setCrustSelection] = useState('')
   const [selectedIngredients, setIngredients] = useState([])
   const [selectedBeverages, setBeverages] = useState([])
-  const [cart, setCart] = useState({})
+  
+  const [order, setOrder] = useState({
+    pizza: [], 
+    beverages: []
+  })
 
+  const resetOptions = () => {
+    setCrustSelection('')
+    document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false )
+  }
   const handleClick = (id) => {
     setCrustSelection(crust.find(element => element._id === id))
   }
 
   const handleAddToCart = (event) => {
     event.preventDefault()
+  
+    const newPizza = [
+      ...selectedIngredients,
+      selectedCrust._id
+    ].filter(ing => ing !== undefined)
+    
+    setOrder({
+      pizza: newPizza.length
+      ? [...order.pizza, newPizza]
+      : [...order.pizza],
+      beverages: [...order.beverages, ...selectedBeverages]
+    })
 
-    const items = {
-      pizza: [selectedCrust, ...selectedIngredients], 
-      beverages: selectedBeverages
-    }
-
-    setCart(items)
-    console.log('items', items)
+    resetOptions()
   }
 
   const handleCheckout = (event) => {
@@ -83,7 +97,6 @@ const Inventory = props => {
         </div>
       </div>
       <div className={styles.div3}>
-        
         <h5>Ingredients:</h5>
         <div className={styles.ingredientDiv}>
           {ingredients.map(element =>
@@ -92,8 +105,7 @@ const Inventory = props => {
             id={element._id}
             handleFunction={handleIngredient}
         />
-      
-          )}
+        )}
         </div>
         <h5>Beverages:</h5>
         <div className={styles.ingredientDiv}>
@@ -109,7 +121,7 @@ const Inventory = props => {
             handleAddToCart={handleAddToCart}
             handleCheckout={handleCheckout}
           />
-
+          
         </div>
       </div>
     </div>
