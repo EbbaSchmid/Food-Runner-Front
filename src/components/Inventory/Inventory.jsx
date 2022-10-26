@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './Inventory.module.css'
 import Crusts from '../Crusts/Crusts'
 import Items from '../Items/Items'
+import CartBuilder from '../CartBuilder/CartBuilder'
 import * as authService from '../../services/authService'
 
 const Inventory = props => {
@@ -22,20 +23,39 @@ const Inventory = props => {
   )
 
   const [selectedCrust, setCrustSelection] = useState({})
+  const [selectedIngredients, setIngredients] = useState([])
+  const [selectedBeverages, setBeverages] = useState({})
+
 
   const handleClick = (id) => {
     setCrustSelection(crust.find(element => element._id === id))
   }
 
+  const handleBeverage = (id, event) => {
+    if (event.target.checked) {
+      setBeverages([...selectedBeverages, id])
+    } else {
+      setBeverages(selectedBeverages.filter(element => element !== id))
+    }
+  }
+
+  const handleIngredient = (id, event) => {
+    if (event.target.checked) { 
+      setIngredients([...selectedIngredients, id])
+    } else {      
+      setIngredients(selectedIngredients.filter(element => element !== id))
+    }
+  }
+
   return (
     <>
     {console.log('selectedcrust', selectedCrust)}
-    <div class={styles.parent}>
-      <div class={styles.div1}>
+    <div className={styles.parent}>
+      <div className={styles.div1}>
         <h1>Pizza Pirates</h1>
         <h2>Build your Own Pizza</h2> 
       </div>
-      <div class={styles.div2}>
+      <div className={styles.div2}>
         <div className={styles.containerFluid}>
           {crust.map((element, idx) => 
             <Crusts
@@ -47,12 +67,32 @@ const Inventory = props => {
           )}
         </div>
       </div>
-      <div class={styles.div3}>
-        <Items 
-          beverages={beverages}
-          ingredients={ingredients}
+      <div className={styles.div3}>
+        
+        <h5>Ingredients:</h5>
+        <div className={styles.ingredientDiv}>
+          {ingredients.map(element =>
+          <Items
+            name={element.name}
+            id={element._id}
+            handleFunction={handleIngredient}
         />
+      
+          )}
+        </div>
+        <h5>Beverages:</h5>
+        <div className={styles.ingredientDiv}>
+          {beverages.map(element => 
+          <Items
+            name={element.name}
+            id={element._id}
+            handleFunction={handleBeverage}
+          />
+          )}
 
+          <CartBuilder />
+
+        </div>
       </div>
     </div>
     </>
