@@ -16,7 +16,7 @@ const Signup = props => {
     </div>
       <h1>Pizza Pirates</h1>
       <h6 className='mt-1'><strong>Sign-up</strong> below to order!</h6>
-      <p className='mt-2'>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
+      <p className='mt-3'>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
       <SignupForm {...props} updateMessage={updateMessage} />
     </main>
   )

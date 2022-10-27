@@ -8,14 +8,14 @@ const Landing = () => {
         <section className={styles.about}>
           <header>
  
-          <div className="text-center mt-5">
+          <div className="text-center mt-4">
             <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div> 
           <h1>Pizza Pirates</h1>
-          <p className="mb-4">Fresh Mediterranean Pizza</p>
-
-          <h4><a href="/">See All Reviews</a></h4>
-
+          <p className="mb-1 no-link">Fresh Mediterranean Pizza</p>
+          <Link to="/reviewList">
+          <p style={{ textDecoration: 'underline #5139F2' }}>See All Reviews</p>
+          </Link>
           </header>
         </section>
         <p className="mt-1">Log-in or Sign-up below to order!</p>
@@ -31,8 +31,10 @@ const Landing = () => {
         </Link>  
         </div>
         <div className="mt-5">
-          <p className="mb-3"><a href="#">Sign in</a> as Business Owner</p>
-          <p>Powered by Food Runner, Inc. ©</p>
+        <Link to="/admin" style={{ textDecoration: 'underline #5139F2' }}>
+          <p >Sign in as Business Owner</p>
+        </Link>  
+          <p className='pt-2'>Powered by Food Runner, Inc. ©</p>
         </div>
       </main>
     </> 

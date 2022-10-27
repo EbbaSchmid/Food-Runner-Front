@@ -11,7 +11,8 @@ const SignupForm = props => {
     password: '',
     passwordConf: '',
   })
-  const [photoData, setPhotoData] = useState({})
+
+
 
   const handleChange = e => {
     props.updateMessage('')
@@ -19,16 +20,12 @@ const SignupForm = props => {
       ...formData,
       [e.target.name]: e.target.value,
     })
-  }
+  } 
 
-  const handleChangePhoto = (evt) => {
-    setPhotoData({ photo: evt.target.files[0] })
-  }
-
-  const handleSubmit = async e => {
-    e.preventDefault()
+ const handleSubmit = async evt => {
+    evt.preventDefault()
     try {
-      await authService.signup(formData, photoData.photo)
+      await authService.login(formData)
       props.handleSignupOrLogin()
       navigate('/pizza-builder')
     } catch (err) {
@@ -96,24 +93,12 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      {/* <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
-          Upload Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
-      </div> */}
-      <div className={styles.inputContainer}>
-        <button type="submit" disabled={isFormInvalid()} className="btn btn-success mt-5" id={styles['sign-b']}>
-
+      <div className="mt-3">
+        <button type="submit" disabled={isFormInvalid()} className="btn btn-success mt-3" id={styles['sign-b']}>
           Sign-Up
         </button>
       </div>
-      <p className='mt-3'>Powered by Food Runner, Inc. ©</p>
+      <p className='mt-2'>Powered by Food Runner, Inc. ©</p>
     </form>
   )
 }
