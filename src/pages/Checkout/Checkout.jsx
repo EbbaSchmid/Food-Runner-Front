@@ -9,7 +9,10 @@ const Checkout = (props) => {
   
   const location = useLocation()
   const [order, setOrder] = useState([])
-  
+  const [pizzas, setPizzas ] = useState([])
+  const [beverages, setBeverages ] = useState([])
+  const [pizzaData, setPizzaData ] = useState([])
+
   const handleChange = evt => {
     //setInventory()
   }
@@ -18,20 +21,51 @@ const Checkout = (props) => {
     const fetchOrder = async () => {
       const data = await orderService.show(id)
       setOrder(data)
-      console.log('data', data)
     }
     fetchOrder()
   }, [id])
+
+  useEffect(() => {
+    setPizzas(order.pizzas)
+    setBeverages(order.beverages)
+  }, [order])
 
   const handleSubmit = evt => {
     evt.preventDefault()
   }
   
+  useEffect(() => {
+    const priceData = pizzas?.map(pizza => 
+      pizza?.ingredients.reduce((previous, current) => 
+        previous + current.price
+      ,0)  
+    )
+    const nameData = pizzas?.map(pizza => 
+      pizza?.ingredients.reduce((previous, current) => 
+        `${previous}, ${current.name}` 
+      ,'')  
+    )
+    setPizzaData([priceData, nameData])
+  }, [pizzas])
+  
   return (
     <>
-        <h1>In Checkout</h1>
-        <CheckoutItem />
-		</>
+      <h1>In Checkout</h1>
+      <h5>Your Pizzas</h5>
+      {console.log(pizzaData)};
+      {pizzaData?.map(element => 
+        <CheckoutItem 
+          item={element[1]}
+          price={element[0]}  
+        />
+      )}
+      <h5>Your Beverages</h5>
+      {beverages?.map(element => 
+        <CheckoutItem 
+          item={element.name}
+          price={element.price}  
+        />)}
+    </>
   )
 }
 

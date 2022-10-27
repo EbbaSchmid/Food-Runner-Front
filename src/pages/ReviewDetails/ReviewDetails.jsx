@@ -23,15 +23,21 @@ const ReviewDetails = (props) => {
   if(!review)return <h1>Loading</h1>
 
   return (
+    <>
     <main className={styles.container}>
-      <h1>Review Details:</h1>
+
+    <div className="text-center mt-5">
+            <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
+          </div> 
+          <h1>Pizza Pirates</h1>
+          <p className="mb-4">Fresh Mediterranean Pizza</p>
+
+      <h2>Review Details:</h2>
       <article>
         <p>{review.review}</p>
       </article>
-      <section>
-        <h1>Comments</h1>
-      </section>
     </main>
+    </>
   )
 }
 

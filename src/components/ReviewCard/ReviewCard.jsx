@@ -9,13 +9,15 @@ const ReviewCard = ({ review }) => {
   console.log('review.text', review.text, review)
   return (
     <>
-      <Link to={`/reviews/${review._id}`}>
+
+    
+      {/* <Link to={`/reviews/${review._id}`}> */}
         <div className={styles.reviewCardBody}>
           <article className={styles.container}>
             <p>{review.review}</p>
           </article>
         </div>
-      </Link>
+      {/* </Link> */}
     </>
   )
 }
