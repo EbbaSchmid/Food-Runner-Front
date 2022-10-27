@@ -68,6 +68,7 @@ const Inventory = props => {
   const handleCheckout = (event) => {
     event.preventDefault()
     handleSubmitDatabase()
+    navigate('/reviews/new')
   }
 
   const handleSubmitDatabase = async () => {
