@@ -96,14 +96,14 @@ const App = () => {
           </ProtectedRoute>
           }  
         />
-                <Route
+                {/* <Route
           path="/reviews/:id"
           element={
             <ProtectedRoute user={user}>
               <ReviewDetails user={user} />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route path="/reviews/new" element={
           <ProtectedRoute user={user}>
             <NewReview handleAddReview={handleAddReview} />
