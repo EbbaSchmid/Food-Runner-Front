@@ -73,7 +73,6 @@ const Inventory = props => {
 
   const handleSubmitDatabase = async () => {
     const newOrder = await orderService.create(order)
-    console.log(newOrder._id)
     navigate(`/checkout/${newOrder._id}`)
   }
 
