@@ -23,6 +23,13 @@ async function getAll() {
   return res.json()
 }
 
+async function show(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+  })
+  return res.json()
+}
+
 async function fulfill(order) {
   const res = await fetch(`${BASE_URL}/${order._id}`, {
     method: 'PUT',
@@ -39,4 +46,5 @@ export {
   create,
   getAll,
   fulfill,
+  show,
 }
