@@ -14,6 +14,7 @@ const ReviewForm = props => {
   }
 
   return (
+    <>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -39,6 +40,7 @@ const ReviewForm = props => {
       </div>
       <p className='mt-3'>Powered by Food Runner, Inc. ©</p>
     </form>
+    </>
   )
 }
 
