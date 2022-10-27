@@ -73,6 +73,7 @@ const Admin = (props) => {
             <div className={styles.columnLeft}>Sales:</div>
             <div className={styles.columnRight}>$400</div>
           </div>
+          {console.log(orderData)}
           <div className={styles.row}>
             <div className={styles.columnLeft}>Orders:</div>
             <div className={styles.columnRight}>7</div>
