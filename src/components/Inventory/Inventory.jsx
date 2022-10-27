@@ -96,7 +96,6 @@ const Inventory = props => {
     <>
     <div className={styles.parent}>
       <div className={styles.div1}>
-
         <Link to="/" style={{textDecoration: 'none'}}>
         <h1>Pizza Pirates</h1>
         </Link>
@@ -134,7 +133,6 @@ const Inventory = props => {
             handleFunction={handleBeverage}
           />
           )}
-
           <CartBuilder 
             handleAddToCart={handleAddToCart}
             handleCheckout={handleCheckout}

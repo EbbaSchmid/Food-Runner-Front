@@ -12,6 +12,7 @@ const CartBuilder = (props) => {
           className={styles.container}
         >
           <button type="submit" className="btn btn-success" id={styles['cart']}>Add to Cart</button>
+          
         </form>
       </div>
       <div className={styles.div2}>

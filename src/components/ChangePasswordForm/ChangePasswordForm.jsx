@@ -11,6 +11,7 @@ const ChangePasswordForm = props => {
     newPwConf: '',
   })
 
+  
   const handleChange = e => {
     props.updateMessage('')
     setFormData({
