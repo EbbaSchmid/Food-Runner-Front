@@ -12,7 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Admin from './pages/Admin/Admin'
 import * as reviewService from './services/reviewService'
 import ReviewList from './pages/ReviewList/ReviewList'
-import ReviewDetails from './pages/ReviewDetails/ReviewDetails'
+
 import NewReview from './pages/NewReview/NewReview'
 import Checkout from './pages/Checkout/Checkout'
 
