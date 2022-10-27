@@ -31,12 +31,12 @@ const LoginForm = props => {
   return (
     <>
     <div className="main-body">
-    <div className="text-center">
+    <div className="text-center mt-2">
       <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
     </div>
-    <h1>Pizza Pirates</h1>
-    <h6><strong>Log-in</strong> below to start your order</h6>
-    <p>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
+    <h1 className='mb-3'>Pizza Pirates</h1>
+    <h6 className='mb-3'><strong>Log-in</strong> below to start your order</h6>
+    <p className='mb-4'>You are seconds away from enjoying<br />our mouth-watering pizza!</p>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -69,13 +69,10 @@ const LoginForm = props => {
       <div className="mt-3">
         <button type="submit" className="btn btn-success" id={styles['login-b']}>Log-In</button>
       </div>
-      <p className="my-3">OR</p>
-
-      <div>
-        <button type="submit" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
-      </div>
       <div className="mt-5">
-        <p className="mb-3"><a href="/">Sign in</a> as Business Owner</p>
+      <Link to="/admin" style={{ textDecoration: 'underline #5139F2' }}>
+        <p className="mb-4">Sign in as Business Owner</p>
+      </Link>  
 
         <p>Powered by Food Runner, Inc. ©</p>
       </div>

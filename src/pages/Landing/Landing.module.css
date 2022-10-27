@@ -1,17 +1,16 @@
 .container {
+  width: 310px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 2px solid gray;
+  border-radius: 30px;
+  padding: 0px 20px 0px 20px;
 }
 
 .review {
-  border: 1ps solid gray;
+  border: 1ps solid light gray;
 }
-
-h6 {
-  text-align: center;
-  color: gray;
- }
 
  #login-b {
   background-color: #5139F2;
@@ -20,3 +19,11 @@ h6 {
  #sign-b {
   background-color: #119DA4;
  }
+
+ p {
+  color: gray;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+

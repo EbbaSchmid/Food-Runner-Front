@@ -43,18 +43,16 @@ const NewReview = (props) => {
             <img src="../truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div>  
           <h1>Pizza Pirates</h1>
-          <p className="mb-4">Thank You for ordering Fresh Mediterranean Pizza!</p>
           </header>
-          <h4>Your order has been submitted and will be ready in 30 minutes. <br></br>
-          Thank you for ordering with Pizza Pirates.</h4>
-
-          <br></br>
-          <br></br>
-          <h5>Tell us what you think about Pizza Pirates:</h5> 
-          <form
+          <h6 className="mb-3">
+          Thank you for ordering with Pizza Pirates.
+          </h6>
+          <h6 className="mb-3">Your order has been submitted and will be ready in 30 minutes.</h6>
+          <h6 className="mb-3">Please leave us a review:</h6>
+           
+    <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
     >
       <div className={styles.inputContainer}>
         <input
@@ -66,20 +64,17 @@ const NewReview = (props) => {
           id="reviewInput"
           name="review"
         />
-      </div>
-      <br></br>
-      <br></br>
-      <div className={styles.submitBtn}>
+      </div><br />
+      <div className="text-center">
         {/* <Link to='/reviewList'> */}
         <button type="submit" className={styles.reviewSubmitBtn} id={styles['sign-b']}>
           Submit Review
         </button>
         {/* </Link> */}
-      </div>
-      <br></br>
-      <br></br>
-      <p className='mt-3'>Powered by Food Runner, Inc. ©</p>
+      </div> 
     </form>
+    
+    <p className='mt-5'>Powered by Food Runner, Inc. ©</p>
       </section>
     </main>
   </>  
