@@ -15,7 +15,7 @@ Deployment Link
 
 **Technology Used & Sources:**
 
-- VS Code, GitHub, CSS, Javascript, HTML, Whimsical, Express, MonogoDB, Mongoose, Bootstrap
+- VS Code, GitHub, CSS, Javascript, HTML, Whimsical, Express, MonogoDB, Mongoose, Bootstrap, React
 
 - Trello Link: https://trello.com/b/EBaiTcQU/food-runner
 
