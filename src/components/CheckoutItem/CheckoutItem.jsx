@@ -1,7 +1,7 @@
 import styles from './CheckoutItem.module.css'
 
 const CheckoutItem = (props) => {
-
+  // console.log(props);
   return (
     <>
     <main>
@@ -10,10 +10,10 @@ const CheckoutItem = (props) => {
 
       </div>
       <div className={styles.div2}>
-
+        {props.item}
       </div>
       <div className={styles.div3}>
-
+        {props.price}
       </div>
     </div>
 
