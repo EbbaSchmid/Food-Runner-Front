@@ -68,12 +68,13 @@ const Inventory = props => {
   const handleCheckout = (event) => {
     event.preventDefault()
     handleSubmitDatabase()
-    navigate('/reviews/new')
+    
   }
 
   const handleSubmitDatabase = async () => {
     const newOrder = await orderService.create(order)
-    //navigate('/')
+    console.log(newOrder._id)
+    navigate(`/checkout/${newOrder._id}`)
   }
 
   const handleBeverage = (id, event) => {

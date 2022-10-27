@@ -16,6 +16,7 @@ import EditReview from './pages/EditReview/EditReview'
 import ReviewList from './pages/ReviewList/ReviewList'
 import ReviewDetails from './pages/ReviewDetails/ReviewDetails'
 import NewReview from './pages/NewReview/NewReview'
+import Checkout from './pages/Checkout/Checkout'
 
 
 // components
@@ -68,6 +69,10 @@ const App = () => {
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route
+          path="/checkout/:id"
+          element={<Checkout />}
         />
         <Route
           path="/login"
