@@ -96,7 +96,10 @@ const Inventory = props => {
     <>
     <div className={styles.parent}>
       <div className={styles.div1}>
+
+        <Link to="/" style={{textDecoration: 'none'}}>
         <h1>Pizza Pirates</h1>
+        </Link>
         <h2>Build your Own Pizza</h2> 
       </div>
       <div className={styles.div2}>

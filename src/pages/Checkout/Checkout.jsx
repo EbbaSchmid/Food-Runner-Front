@@ -10,6 +10,7 @@ const Checkout = (props) => {
   const { id } = useParams()
   const [order, setOrder] = useState(null)
   const [pizzas, setPizzas ] = useState([])
+  const [total, setTotal ] = useState(0)
   const [beverages, setBeverages ] = useState([])
   const [pizzaData, setPizzaData ] = useState(null)
 
@@ -26,7 +27,6 @@ const Checkout = (props) => {
   useEffect(() => {
     setPizzas(order?.pizzas)
     setBeverages(order?.beverages)
-    console.log(order)
   }, [order])
   
   useEffect(() => {
@@ -47,7 +47,17 @@ const Checkout = (props) => {
       data[i] = {pizzaName: nameData[i], pizzaPrice: priceData[i]}
     }
     setPizzaData(data)
-  }, [pizzas])
+
+    const pizzaTotal = priceData.reduce((prev, curr) => 
+      prev + curr
+    , 0)
+
+    const beverageTotal = beverages.reduce((prev, curr) =>
+      prev + curr.price
+    , 0)
+    
+    setTotal(beverageTotal+pizzaTotal)
+  }, [pizzas, beverages])
 
   const handleContinue = async (e) => {
     navigate(`/reviews/new`)
@@ -63,7 +73,6 @@ const Checkout = (props) => {
       </div>
       <div className={styles.div2}>
         <h5>Your Pizzas</h5>
-        {console.log('pizzaData', pizzaData)}
         {pizzaData?.map(element => 
           <CheckoutItem 
             item={element.pizzaName}
@@ -78,7 +87,16 @@ const Checkout = (props) => {
           />
         )} 
       </div>
+
       <div className={styles.div3}>
+
+        <table className={styles.table}>
+            <tr>
+              <td><h5>Total:</h5></td>
+              <td style={{ textAlign: 'right' }}>{total}</td>
+            </tr>
+        </table>
+
         <form
           autoComplete="off"
           onSubmit={e => handleContinue(e)}

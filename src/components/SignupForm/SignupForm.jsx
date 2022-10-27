@@ -12,8 +12,6 @@ const SignupForm = props => {
     passwordConf: '',
   })
 
-
-
   const handleChange = e => {
     props.updateMessage('')
     setFormData({
