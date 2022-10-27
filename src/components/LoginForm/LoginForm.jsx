@@ -29,7 +29,6 @@ const LoginForm = props => {
   }
 
   return (
-    
     <>
     <div className="main-body">
     <div className="text-center">
