@@ -9,11 +9,15 @@ const ReviewList = (props) => {
     
     <main className={styles.container}>
 
-      <div className="text-center mt-5">
+    <header>
+ 
+    <div className="text-center mt-5">
       <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
     </div> 
-    <h1>Pizza Pirates</h1>
-    <p className="mb-4">Fresh Mediterranean Pizza</p>
+      <h1>Pizza Pirates</h1>
+        <p className="mb-4">Fresh Mediterranean Pizza</p>
+
+ </header>
     <h6>All Reviews:</h6>
 
       {props.reviews.map((review) => (
