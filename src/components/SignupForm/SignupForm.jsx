@@ -12,8 +12,6 @@ const SignupForm = props => {
     passwordConf: '',
   })
 
-
-
   const handleChange = e => {
     props.updateMessage('')
     setFormData({
@@ -25,10 +23,11 @@ const SignupForm = props => {
  const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      await authService.login(formData)
+      await authService.signup(formData)
       props.handleSignupOrLogin()
       navigate('/pizza-builder')
     } catch (err) {
+      console.log(err)
       props.updateMessage(err.message)
     }
   }
