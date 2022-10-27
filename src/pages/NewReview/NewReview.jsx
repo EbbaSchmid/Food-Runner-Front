@@ -5,6 +5,7 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm'
 import * as reviewService from '../../services/reviewService'
 
 
+
 const NewReview = (props) => {
   const [message, setMessage] = useState([''])
 
@@ -49,7 +50,7 @@ const NewReview = (props) => {
 
           <br></br>
           <br></br>
-          <p>Tell us what you think about Pizza Pirates:</p> 
+          <h5>Tell us what you think about Pizza Pirates:</h5> 
           <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -66,14 +67,17 @@ const NewReview = (props) => {
           name="review"
         />
       </div>
-    
-      <div className={styles.inputContainer}>
+      <br></br>
+      <br></br>
+      <div className={styles.submitBtn}>
         {/* <Link to='/reviewList'> */}
         <button type="submit" className={styles.reviewSubmitBtn} id={styles['sign-b']}>
           Submit Review
         </button>
         {/* </Link> */}
       </div>
+      <br></br>
+      <br></br>
       <p className='mt-3'>Powered by Food Runner, Inc. ©</p>
     </form>
       </section>
