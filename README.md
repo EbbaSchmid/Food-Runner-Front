@@ -1,4 +1,4 @@
-Pizza Pirates by Food Runner
+<h1>Pizza Pirates by Food Runner</h1>
 
 Deployment Link
 
@@ -19,6 +19,10 @@ Deployment Link
 
 - Trello Link: https://trello.com/b/EBaiTcQU/food-runner
 
+- Truck Icon: https://fontawesome.com/icons/truck-fast?s=solid&f=classic
+
+- Favicon: https://fontawesome.com/icons/pizza?s=solid&f=classic
+
 ---------------------------------------------------------------
 
 **Screen Shots of Deployed App:**
@@ -29,13 +33,13 @@ Deployment Link
 ---------------------------------------------------------------
 
 **Wireframe Mock-Up Photos:**
-<!-- ![WireFrame Setup Img](assets/ "wireframe home-advice")
-![WireFrame Setup Img](assets/ "wireframe profiles") -->
+![WireFrame Setup Img](assets/WireFrame.jpg)
+
 
 ---------------------------------------------------------------
 
 **ERD Layout:**
-<!-- ![ERD layout Img](assets/ "ERD layout") -->
+![ERD layout Img](assets/ERD.jpg)
 
 ---------------------------------------------------------------
 
