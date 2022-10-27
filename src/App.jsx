@@ -12,7 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Admin from './pages/Admin/Admin'
 import * as reviewService from './services/reviewService'
 import ReviewList from './pages/ReviewList/ReviewList'
-import ReviewDetails from './pages/ReviewDetails/ReviewDetails'
+
 import NewReview from './pages/NewReview/NewReview'
 import Checkout from './pages/Checkout/Checkout'
 
@@ -96,14 +96,14 @@ const App = () => {
           </ProtectedRoute>
           }  
         />
-                <Route
+                {/* <Route
           path="/reviews/:id"
           element={
             <ProtectedRoute user={user}>
               <ReviewDetails user={user} />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route path="/reviews/new" element={
           <ProtectedRoute user={user}>
             <NewReview handleAddReview={handleAddReview} />
