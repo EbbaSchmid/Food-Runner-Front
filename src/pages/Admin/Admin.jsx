@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { useLocation, Link } from "react-router-dom"
+import { useLocation, Link, useNavigate } from "react-router-dom"
 import * as orderService from '../../services/orderService'
 import styles from './Admin.module.css'
 import KitchenOrder from "../../components/KitchenOrder/KitchenOrder"
@@ -10,6 +10,8 @@ const Admin = (props) => {
   const location = useLocation()
   const [orderData, setOrderData] = useState([])
   const [orderUpdate, setOrderUpdate] = useState(0)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -23,6 +25,10 @@ const Admin = (props) => {
     orderService.fulfill(id)
     setOrderUpdate(1)
   }
+
+  const goToBuilder = () => {
+    navigate('/')
+  }
   
   return (
     <>
@@ -35,7 +41,8 @@ const Admin = (props) => {
           <button type="submit" 
             className="btn btn-success" 
             id={styles['signout']}
-            >Log-Out
+            onClick={() => goToBuilder()}
+            >Log Out
           </button>
         </div>
         <div className={styles.div3}>

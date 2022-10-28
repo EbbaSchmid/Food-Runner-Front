@@ -17,6 +17,13 @@
   margin: 5px;
 }
 
+#delete {
+  background-color: #f23939;
+  border: none;
+  width: 100%;
+  margin: 5px;
+}
+
 .table{
   border-top: 1px solid black;
   width: 100%;

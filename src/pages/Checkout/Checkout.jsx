@@ -63,6 +63,11 @@ const Checkout = (props) => {
     navigate(`/reviews/new`)
   }
 
+  const handleDelete = async (e) => {
+    orderService.delete(id)
+    navigate('/pizza-builder')
+  }
+
   return (
     pizzaData ? 
     <>
@@ -104,6 +109,15 @@ const Checkout = (props) => {
         >
           <button type="submit" className="btn btn-success" id={styles['checkout']}>Checkout</button>
         </form>
+
+        <form
+          autoComplete="off"
+          onSubmit={e => handleDelete(e)}
+          className={styles.container}
+        >
+          <button type="submit" className="btn btn-success" id={styles['delete']}>Delete Cart</button>
+        </form>
+
       </div>
     </div>
     </>
