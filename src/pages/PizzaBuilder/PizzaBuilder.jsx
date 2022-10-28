@@ -8,10 +8,6 @@ const PizzaBuilder = (props) => {
   const location = useLocation()
   const [inventory, setInventory] = useState([])
   
-  const handleChange = evt => {
-    setInventory()
-  }
-  
   useEffect(() => {
     const fetchAllInventory = async () => {
       const inventoryData = await inventoryService.getAll()
@@ -20,10 +16,6 @@ const PizzaBuilder = (props) => {
     fetchAllInventory()
   },[])
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
-  }
-  
   return (
     <>
         <Inventory inventory={inventory} />
