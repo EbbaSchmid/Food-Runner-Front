@@ -84,7 +84,7 @@ const Admin = (props) => {
         <div className={styles.subdiv}>
           <div className={styles.row}>
             <div className={styles.columnLeft}>Sales:</div>
-            <div className={styles.columnRight}>{Math.round(sales * 100) / 100}</div>
+            <div className={styles.columnRight}>${Math.round(sales * 100) / 100}</div>
           </div>
           <div className={styles.row}>
             <div className={styles.columnLeft}>Orders:</div>
