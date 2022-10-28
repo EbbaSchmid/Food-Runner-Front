@@ -11,7 +11,6 @@ const Landing = () => {
             <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div> 
           <h1>Pizza Pirates</h1>
-
           <p className="mb-1 no-link">Fresh Mediterranean Pizza</p>
           <Link to="/reviewList">
           <p style={{ textDecoration: 'underline #5139F2' }}>See All Reviews</p>
