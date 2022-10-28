@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import { useLocation, Link } from "react-router-dom"
 import Inventory from "../../components/Inventory/Inventory"
 import * as inventoryService from '../../services/inventoryService'
+import styles from './PizzaBuilder.module.css'
 
 const PizzaBuilder = (props) => {
   
@@ -18,8 +19,10 @@ const PizzaBuilder = (props) => {
 
   return (
     <>
+      <div className={styles.container}>
         <Inventory inventory={inventory} />
-		</>
+      </div>
+    </>
   )
 }
 
