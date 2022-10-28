@@ -3,7 +3,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  
+  width: 80%;
 }
 
 .label,
@@ -13,6 +13,7 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+  width: 90%;
 }
 
 #sign-b {
