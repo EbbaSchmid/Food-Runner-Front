@@ -117,14 +117,13 @@
   display: flex;
   justify-content: center;
   align-items: center; 
+  border: none;
 }
 
 #signout {
   background-color: #5139F2;
   border: none;
 }
-
-
 
 p1{
   font-weight: bold;
