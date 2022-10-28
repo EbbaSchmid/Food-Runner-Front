@@ -30,15 +30,12 @@ async function show(id) {
   return res.json()
 }
 
-async function fulfill(order) {
-  const res = await fetch(`${BASE_URL}/${order._id}`, {
+async function fulfill(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: JSON.stringify(order)
+    body: JSON.stringify({isFulfilled: true})
   })
+
   return res.json()
 }
 

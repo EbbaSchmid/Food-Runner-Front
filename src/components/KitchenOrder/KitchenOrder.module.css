@@ -1,3 +1,15 @@
+#fulfill {
+  background-color: #f23939;
+  border: none;
+  margin: 5px;
+}
+
+#view {
+  background-color: #5139F2;
+  border: none;
+  margin: 5px;
+}
+
 .parent {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -37,11 +49,6 @@
 .orderList{
   border: solid;
   border-color: lightgray;
-  width: 55vw;
-  height: 70vh;
-  overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
-  scrollbar-width: thin;
 }
 
 .order{
@@ -114,8 +121,6 @@
   background-color: #5139F2;
   border: none;
 }
-
-
 
 p1{
   font-weight: bold;
