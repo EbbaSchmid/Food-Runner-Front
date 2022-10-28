@@ -26,9 +26,11 @@ Deployment Link
 ---------------------------------------------------------------
 
 **Screen Shots of Deployed App:**
-<!-- ![Deployed App photos](assets/"Deployed App photos")
-![Deployed App photos](assets/ "Deployed App photos")
-![Deployed App photos](assets/ "Deployed App photos") -->
+![Deployed App photos](assets/Landing.jpg)
+![Deployed App photos](assets/OrderForm.jpg)
+![Deployed App photos](assets/Cart.jpg)
+![Deployed App photos](assets/ThankyouReview.jpg)
+![Deployed App photos](assets/ReviewList.jpg)
 
 ---------------------------------------------------------------
 
