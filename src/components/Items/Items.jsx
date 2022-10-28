@@ -2,7 +2,7 @@ const Items = (props) => {
 
   return (
     <>
-    <div style={{margin: '5px 0'}} >
+    <div style={{margin: '4px 0'}} >
       <input 
         type="checkbox" 
         id={props.id} 

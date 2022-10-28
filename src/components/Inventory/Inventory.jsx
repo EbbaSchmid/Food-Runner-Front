@@ -73,6 +73,7 @@ const Inventory = props => {
 
   const handleSubmitDatabase = async () => {
     const newOrder = await orderService.create(order)
+    console.log(newOrder._id)
     navigate(`/checkout/${newOrder._id}`)
   }
 
@@ -94,17 +95,12 @@ const Inventory = props => {
 
   return (
     <>
-    <main>
     <div className={styles.parent}>
       <div className={styles.div1}>
-      <div className="text-center mt-4">
-            <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
-          </div>
-        <Link to="/" style={{textDecoration: 'none'}}>
-        <h1 className="mt-3">Pizza Pirates</h1>
-        </Link>
-        <h4>Build your Own Pizza</h4> 
+        <h1>Pizza Pirates</h1>
+        <h6 style={{textAlign: 'center'}}>Build your Own Pizza</h6> 
       </div>
+      <div className={styles.div2}>
         <div className={styles.containerFluid}>
           {crust.map((element, idx) => 
             <Crusts
@@ -115,8 +111,10 @@ const Inventory = props => {
             />  
           )}
         </div>
-      <div>
-        <h5>Ingredients:</h5>
+      </div>
+      <div className={styles.div3}>
+        <div style={{width: '100%'}}>
+        <h5 style={{fontSize: '1.0em',textDecoration: 'underline'}}>Ingredients:</h5>
         <div className={styles.ingredientDiv}>
           {ingredients.map(element =>
           <Items
@@ -126,7 +124,7 @@ const Inventory = props => {
         />
         )}
         </div>
-        <h5>Beverages:</h5>
+        <h5 style={{fontSize: '1.0em', textDecoration: 'underline'}}>Beverages:</h5>
         <div className={styles.ingredientDiv}>
           {beverages.map(element => 
           <Items
@@ -135,19 +133,17 @@ const Inventory = props => {
             handleFunction={handleBeverage}
           />
           )}
-          <CartBuilder 
+          
+          </div>
+        </div>
+      </div>
+      <CartBuilder 
             handleAddToCart={handleAddToCart}
             handleCheckout={handleCheckout}
             pizzas={order.pizzas.length}
             beverages={order.beverages.length}
           />
-          
-        </div>
-        <div>
-        </div>
-      </div>
     </div>
-    </main>
     </>
   )
 }
