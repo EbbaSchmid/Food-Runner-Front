@@ -5,7 +5,8 @@
   flex-direction: column;
   border: 2px solid gray;
   border-radius: 30px;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
+  background-color: rgb(247, 247, 247);
 }
 
 .review {
