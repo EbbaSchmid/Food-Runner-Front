@@ -92,7 +92,7 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className="mt-3">
+      <div className="mt-3" style={{width: '100%'}}>
         <button type="submit" disabled={isFormInvalid()} className="btn btn-success mt-3" id={styles['sign-b']}>
           Sign-Up
         </button>

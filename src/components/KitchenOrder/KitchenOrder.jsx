@@ -22,7 +22,7 @@ const KitchenOrder= (props) => {
                     className="btn btn-success" 
                     id={styles['fulfill']}
                     style={{width: '100px'}}
-                    onClick={() => props.handleFulfilled(props._id)}
+                    onClick={() => props.handleFulfilled(props._id, props.order)}
                     >Fulfill
                   </button>
                   <button

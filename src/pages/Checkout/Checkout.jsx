@@ -77,14 +77,14 @@ const Checkout = (props) => {
         <h6>Your Order:</h6>
       </div>
       <div className={styles.div2}>
-        <h5>Your Pizzas</h5>
+        <h5 style={{fontSize: '1em', textDecoration: 'underline'}}>Your Pizzas</h5>
         {pizzaData?.map(element => 
           <CheckoutItem 
             item={element.pizzaName}
             price={element.pizzaPrice}  
           />
         )}
-        <h5>Your Beverages</h5>
+        <h5 style={{marginTop: '20px',fontSize: '1em',textDecoration: 'underline' }}>Your Beverages</h5>
         {beverages?.map(element => 
           <CheckoutItem 
             item={element.name}
@@ -98,7 +98,7 @@ const Checkout = (props) => {
         <table className={styles.table}>
             <tr>
               <td><h5>Total:</h5></td>
-              <td style={{ textAlign: 'right' }}>{total}</td>
+              <td style={{ textAlign: 'right' }}>${Math.round(total * 100) / 100}</td>
             </tr>
         </table>
 

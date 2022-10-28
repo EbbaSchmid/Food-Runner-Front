@@ -43,18 +43,21 @@ const NewReview = (props) => {
             <img src="../truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div>  
           <h1>Pizza Pirates</h1>
-          </header>
-          <h6 className="mb-3">
+          <div style={{maxWidth: "250px", margin: '20px auto 25px auto'}}>
+          <h6 className="mb-3" style={{fontSize: '0.8em'}}>
           Thank you for ordering with Pizza Pirates.
+          Your order has been submitted and will be ready in 30 minutes.
           </h6>
-          <h6 className="mb-3">Your order has been submitted and will be ready in 30 minutes.</h6>
+          </div>
+          </header>
+          
+   
           <h6 className="mb-3">Please leave us a review:</h6>
-           
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
     >
-      <div className={styles.inputContainer}>
+      <div style={{maxWidth: '270px'}} className={styles.inputContainer}>
         <input
           className="reviewForm"
           placeholder="Write a Review"

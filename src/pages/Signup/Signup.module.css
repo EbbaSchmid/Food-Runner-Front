@@ -9,18 +9,19 @@
 }
 
 .review {
-  border: 1ps solid light gray;
+  border: 1px solid light gray;
 }
 
- #login-b {
+#login-b {
   background-color: #5139F2;
- }
+}
 
- #sign-b {
+#sign-b {
   background-color: #119DA4;
- }
+  border: none;
+}
 
- p {
+p {
   color: gray;
   font-size: 12px;
   text-align: center;
