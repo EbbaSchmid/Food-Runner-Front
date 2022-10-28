@@ -9,6 +9,7 @@ const Admin = (props) => {
   
   const location = useLocation()
   const [orderData, setOrderData] = useState([])
+  const [orderUpdate, setOrderUpdate] = useState(0)
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -16,10 +17,11 @@ const Admin = (props) => {
       setOrderData(orderData.reverse())
     }
     fetchOrders()
-  }, [orderData])
+  }, [orderUpdate])
 
   const handleFulfilled = (id) => {
     orderService.fulfill(id)
+    setOrderUpdate(1)
   }
   
   return (
