@@ -53,7 +53,7 @@ const LoginForm = props => {
           name="email"
           onChange={handleChange}
         />
-      </div><br /><br />
+      </div>
       <div className={styles.inputContainer}>
         <input
           className="form-control"
@@ -66,7 +66,7 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className="mt-3">
+      <div className="mt-3" style={{width:'85%'}}>
         <button type="submit" className="btn btn-success" id={styles['login-b']}>Log-In</button>
       </div>
       <div className="mt-5">

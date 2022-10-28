@@ -11,6 +11,7 @@ const Landing = () => {
             <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
           </div> 
           <h1>Pizza Pirates</h1>
+
           <p className="mb-1 no-link">Fresh Mediterranean Pizza</p>
           <Link to="/reviewList">
           <p style={{ textDecoration: 'underline #5139F2' }}>See All Reviews</p>
@@ -18,13 +19,13 @@ const Landing = () => {
           </header>
         </section>
         <p className="mt-1">Log-in or Sign-up below to order!</p>
-        <div className="mt-1">
+        <div style={{width: '90%'}}>
           <Link to="/login">
           <button type="submit" className="btn btn-success" id={styles['login-b']}>Log-In</button>
           </Link>
         </div>
         <p className="my-3">OR</p>
-        <div>
+        <div style={{width: '90%'}}>
         <Link to="/signup">
           <button type="submit" className="btn btn-success" id={styles['sign-b']}>Sign-Up</button>
         </Link>  

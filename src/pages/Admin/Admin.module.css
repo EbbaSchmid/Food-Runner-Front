@@ -32,11 +32,15 @@
 .subdiv{
   border: solid;
   border-color: lightgray;
+  border-radius: 10px;
+  padding-right: 15px;
 }
 
 .orderList{
   border: solid;
   border-color: lightgray;
+  border-radius: 10px;
+  background-color: rgb(235, 235, 235);
   width: 55vw;
   height: 70vh;
   overflow-y: scroll;
@@ -47,6 +51,7 @@
 .order{
   border: solid;
   border-color: lightgray;
+  border-radius: 10px;
   margin: 10px;
   padding: 10px;
 }
@@ -64,6 +69,7 @@
 .row {
   display: flex;
   border-color: lightgray;
+  border-radius: 10px;
   align-items: center;
 }
 
@@ -86,8 +92,11 @@
   border: solid;
   border-color: lightgray;
   text-align: right;
-  padding: 0px;
+  padding: 4px;
   margin: 0px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .columnLeftOrder {
