@@ -35,7 +35,13 @@ async function fulfill(id) {
     method: 'PUT',
     body: JSON.stringify({isFulfilled: true})
   })
+  return res.json()
+}
 
+async function deleteCart(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE'
+  })
   return res.json()
 }
 
@@ -44,4 +50,5 @@ export {
   getAll,
   fulfill,
   show,
+  deleteCart as delete,
 }
