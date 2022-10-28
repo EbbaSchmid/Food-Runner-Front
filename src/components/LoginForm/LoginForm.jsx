@@ -30,7 +30,7 @@ const LoginForm = props => {
 
   return (
     <>
-    <div className="main-body">
+    <div className="main-body" style={{marginTop: '20px'}}>
     <div className="text-center mt-2">
       <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
     </div>
@@ -68,6 +68,7 @@ const LoginForm = props => {
       </div>
       <div className="mt-3" style={{width:'85%'}}>
         <button type="submit" className="btn btn-success" id={styles['login-b']}>Log-In</button>
+        <p>{props.message}</p>
       </div>
       <div className="mt-5">
       <Link to="/admin" style={{ textDecoration: 'underline #5139F2' }}>

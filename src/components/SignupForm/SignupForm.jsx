@@ -92,12 +92,12 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className="mt-3" style={{width: '100%'}}>
+      <div className="mt-3" style={{width: '90%'}}>
         <button type="submit" disabled={isFormInvalid()} className="btn btn-success mt-3" id={styles['sign-b']}>
           Sign-Up
         </button>
       </div>
-      <p className='mt-2'>Powered by Food Runner, Inc. ©</p>
+      <p className='mt-2' style={{paddingBottom: '10px'}}>Powered by Food Runner, Inc.©</p>
     </form>
   )
 }
