@@ -94,14 +94,17 @@ const Inventory = props => {
 
   return (
     <>
+    <main>
     <div className={styles.parent}>
       <div className={styles.div1}>
+      <div className="text-center mt-4">
+            <img src="./truck-fast-solid.svg" alt="Pizza Truck Logo"/>
+          </div>
         <Link to="/" style={{textDecoration: 'none'}}>
-        <h1>Pizza Pirates</h1>
+        <h1 className="mt-3">Pizza Pirates</h1>
         </Link>
-        <h2>Build your Own Pizza</h2> 
+        <h4>Build your Own Pizza</h4> 
       </div>
-      <div className={styles.div2}>
         <div className={styles.containerFluid}>
           {crust.map((element, idx) => 
             <Crusts
@@ -112,8 +115,7 @@ const Inventory = props => {
             />  
           )}
         </div>
-      </div>
-      <div className={styles.div3}>
+      <div>
         <h5>Ingredients:</h5>
         <div className={styles.ingredientDiv}>
           {ingredients.map(element =>
@@ -141,8 +143,11 @@ const Inventory = props => {
           />
           
         </div>
+        <div>
+        </div>
       </div>
     </div>
+    </main>
     </>
   )
 }

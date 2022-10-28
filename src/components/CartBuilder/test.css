@@ -1,0 +1,10 @@
+<table>
+          <tr>
+            <td>Pizzas in Cart:</td>
+            <td>{props.pizzas}</td>
+          </tr>
+          <tr>
+            <td>Bev. in Cart:</td>
+            <td>{props.beverages}</td>
+          </tr>
+        </table>
